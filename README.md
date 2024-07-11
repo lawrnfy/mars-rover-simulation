@@ -1,6 +1,6 @@
 # Mars Rover Simulation
 
-![Mars Rover Image](file:///C:/Users/yonis/OneDrive/Desktop/Github%20Project/mars-rover-simulation/Rover.jpg)
+![Rover](https://github.com/lawrnfy/mars-rover-simulation/assets/152223097/163fdc56-314c-46ea-877b-8c29eb45e213)
 
 
 ## Overview
