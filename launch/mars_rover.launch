@@ -1,0 +1,35 @@
+<launch>
+  <!-- Launching the main node for the rover -->
+  <node pkg="your_package_name" type="mars_rover_node" name="mars_rover_node" output="screen">
+    <!-- Example: Setting parameters -->
+    <param name="max_speed" value="2.0" />
+    <param name="camera_resolution" value="720p" />
+  </node>
+
+  <!-- Launching a camera node -->
+  <node pkg="camera_package" type="camera_node" name="camera_node" output="screen">
+    <!-- Example: Setting camera parameters -->
+    <param name="image_topic" value="/mars_rover/camera/image_raw" />
+    <param name="camera_mode" value="night_vision" />
+  </node>
+
+  <!-- Launching a mapping node -->
+  <node pkg="mapping_package" type="mapping_node" name="mapping_node" output="screen">
+    <!-- Example: Setting mapping parameters -->
+    <param name="map_topic" value="/mars_rover/map" />
+    <param name="mapping_algorithm" value="SLAM" />
+  </node>
+
+  <!-- Including another launch file for additional configurations -->
+  <include file="$(find your_package_name)/launch/additional_nodes.launch">
+    <!-- Example: Passing arguments to the included launch file -->
+    <arg name="robot_name" value="mars_rover" />
+  </include>
+
+  <!-- Spawning the robot in Gazebo simulation environment -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!-- Example: Passing arguments to Gazebo launch file -->
+    <arg name="world_name" value="$(find your_package_name)/worlds/mars.world" />
+    <arg name="paused" value="false" />
+  </include>
+</launch>

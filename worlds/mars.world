@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  
+  <!-- World Description -->
+  <world name="mars_world">
+    
+    <!-- Include Models -->
+    
+    <!-- Mars Surface -->
+    <include>
+      <uri>model://mars_surface</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    
+    <!-- Include Other Models as Needed -->
+    
+    <!-- Light Source -->
+    <include>
+      <uri>model://sun</uri>
+      <pose>0 0 100 0 0 0</pose>
+    </include>
+    
+    <!-- Include Mars Rover Model -->
+    <include>
+      <uri>model://mars_rover</uri>
+      <pose>0 0 0.2 0 0 0</pose>
+    </include>
+    
+    <!-- Physics Properties -->
+    <physics name="default_physics" default="true" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    
+    <!-- Lighting and Rendering -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <sky>
+        <clouds>
+          <speed>30</speed>
+          <density>0.5</density>
+        </clouds>
+      </sky>
+      <shadows>true</shadows>
+    </scene>
+    
+    <!-- GUI Properties -->
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>-3.0 0.0 2.0 0.0 0.0 0.0</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    
+  </world>
+  
+</sdf>

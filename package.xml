@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mars_rover_simulation</name>
+  <version>0.1.0</version>
+  <description>
+    Package for simulating a Mars rover using ROS.
+  </description>
+  
+  <!-- Maintainer information -->
+  <maintainer email="yonishassan23@gmail.com">Yonis Ahmed Hassan</maintainer>
+  <license>BSD</license>
+  
+  <!-- Dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <!-- Add other build dependencies as needed -->
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <!-- Add other runtime dependencies as needed -->
+
+  <!-- Exported package configuration -->
+  <export>
+    <!-- Specify any additional build flags or options -->
+    <build_type>cmake</build_type>
+  </export>
+</package>
